@@ -1,0 +1,6 @@
+tup=(10,20,30,40)
+print("Original tuple", tup)
+print("Length of tuple in ",len(tup))
+print("Frequency of 30 ",tup.count(30))
+print("Index of 40 in the tuple ",tup.index(40))
+print('sort tuple is ',sorted(tup))
