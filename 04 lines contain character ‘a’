@@ -1,0 +1,12 @@
+import re
+try:
+    f1=open("Sample1.txt","r")
+    f2=open("Sample2.txt","w+")
+    for line in f1.readlines():
+        text=re.search(r"\ba\b",line)
+    if not text:
+        f2.write(line)
+        f2=open("Sample2.txt","r")
+        print(f2.read())
+except FileNotFoundError:
+    print("File not found")
