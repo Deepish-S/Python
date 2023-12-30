@@ -1,0 +1,7 @@
+str=input("Enter a string: ")
+n= len(str)
+dict={}
+for i in str:
+if i not in dict:
+dict.update({i:str.count(i)})
+print(dict)
