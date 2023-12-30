@@ -1,0 +1,27 @@
+def push(stack):
+    ele = int(input("Enter ele: "))
+    stack.append(ele)
+
+def pop(stack):
+    if len(stack) == 0:
+        print("Empty")
+        return
+    stack.pop()
+
+# Demo.py
+choice = int(input("1.Stack 2.Queue : "))
+stack = []
+
+if choice == 1:
+    while True:
+        ch2 = int(input("1.Push 2.Pop 3.Exit : "))
+        if ch2 == 1:
+            push(stack)
+            print(stack)
+        elif ch2 == 2:
+            pop(stack)
+            print(stack)
+        else:
+            break
+else:
+    print("Invalid choice")
