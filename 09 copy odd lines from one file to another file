@@ -1,0 +1,9 @@
+f=open("Sample1.txt","r")
+content=f.readlines()
+le=len(content)
+f2=open("Sample2.txt","w")
+for i in range(0,le,2):
+    f2.write(content[i])
+    f2.close()
+    f2=open("Sample2.txt","r")
+    print(f2.read())
