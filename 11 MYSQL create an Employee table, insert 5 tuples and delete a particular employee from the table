@@ -1,0 +1,78 @@
+import mysql.connector as conn
+db=conn.connect(user='root',password='root',host='localhost')
+
+cu=db.cursor()
+sql0="drop database db3;"
+sql1="create database db3;"
+sql2="use db3;"
+sql3="create table employee(empid interger,ename varchar(20),dept varchar(20),salary
+integer);"
+sql4="insert into employee values(001,'sagar','sales dept',15000);"
+sql5="insert into employee values(002,'rizwan','finance dept',16000);"
+sql6="insert into employee values(003,'surya','marketing dept',17000);"
+sql7="insert into employee values(004,'areeb','accounts dept',18000);"
+sql8="insert into employee values(005,'sathish','resource dept',19000);"
+sql9="select * from employee;"
+cu.execute(sql0)
+cu.execute(sql1)
+cu.execute(sql2)
+cu.execute(sql3)
+cu.execute(sql4)
+cu.execute(sql5)
+cu.execute(sql6)
+cu.execute(sql7)
+
+cu.execute(sql8)
+cu.execute(sql9)
+for i in cu.fetchall():
+print(i)
+
+Output:
+(2,'rizwan','finance dept',16000)
+(3,'surya','marketing dept',17000)
+(4,'areeb','accounts dept',18000)
+(5,'sathish','resource dept',19000)
+
+12.Write a python program to create student table and find the
+min,max,sum and average of the marks in a student mark table.
+import mysql.connector as conn
+db=conn.connect(user='root',password='root',host='localhost')
+cu=db.cursor()
+sql0="drop database db;"
+sql1="create database db;"
+sql2="use db;"
+sql3="create table student( s_id varchar(10),name varchar(20),dept varchar(10),marks
+varchar(10));"
+
+sql4="insert into student values('001','sagar','bca','78');"
+sql5="insert into student values('002','rizwan','bca','88');"
+sql6="insert into student values('003','surya','bca','98');"
+cu.execute(sql0)
+cu.execute(sql1)
+cu.execute(sql2)
+cu.execute(sql3)
+cu.execute(sql4)
+cu.execute(sql5)
+cu.execute(sql6)
+db.commit()
+sql7="select max(marks) from student"
+cu.execute(sql7)
+max1=cu.fetchall()
+
+print("maximum is ",max1)
+
+sql8="select min(marks) from student"
+cu.execute(sql8)
+min1=cu.fetchall()
+print("manimum is ",min1)
+
+sql9="select avg(marks) from student"
+cu.execute(sql9)
+avg1=cu.fetchall()
+print("avg is",avg1)
+
+sql10="select sum(marks) from student"
+cu.execute(sql10)
+sum=cu.fetchall()
+print("sum is",sum)
+
