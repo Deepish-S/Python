@@ -1,0 +1,7 @@
+import random
+ch='y'
+while ch=='y' or ch=='Y':
+    num=random.randrange(1,7)
+    print(num)
+    ch=input("Do you want to roll (y/n)?: ")
+print("Exit")
