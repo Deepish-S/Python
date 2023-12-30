@@ -1,0 +1,42 @@
+min,max,sum and average of the marks in a student mark table.
+import mysql.connector as conn
+db=conn.connect(user='root',password='root',host='localhost')
+cu=db.cursor()
+sql0="drop database db;"
+sql1="create database db;"
+sql2="use db;"
+sql3="create table student( s_id varchar(10),name varchar(20),dept varchar(10),marks
+varchar(10));"
+
+sql4="insert into student values('001','sagar','bca','78');"
+sql5="insert into student values('002','rizwan','bca','88');"
+sql6="insert into student values('003','surya','bca','98');"
+cu.execute(sql0)
+cu.execute(sql1)
+cu.execute(sql2)
+cu.execute(sql3)
+cu.execute(sql4)
+cu.execute(sql5)
+cu.execute(sql6)
+db.commit()
+sql7="select max(marks) from student"
+cu.execute(sql7)
+max1=cu.fetchall()
+
+print("maximum is ",max1)
+
+sql8="select min(marks) from student"
+cu.execute(sql8)
+min1=cu.fetchall()
+print("manimum is ",min1)
+
+sql9="select avg(marks) from student"
+cu.execute(sql9)
+avg1=cu.fetchall()
+print("avg is",avg1)
+
+sql10="select sum(marks) from student"
+cu.execute(sql10)
+sum=cu.fetchall()
+print("sum is",sum)
+
