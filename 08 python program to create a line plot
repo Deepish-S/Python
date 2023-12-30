@@ -1,0 +1,7 @@
+import matplotlib.pyplot as plt
+data=[11,2,26,30,20,44]
+plt.plot(data)
+plt.xlabel("time")
+plt.ylabel("frequency")
+plt.title("Graph")
+plt.show()
